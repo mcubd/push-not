@@ -18,30 +18,14 @@ app.get('/',async (req, res) => {
        res.sendFile(__dirname+'/1.html')  
 }) 
 
-app.get('/service-worker.js',async (req, res) => {
+
+
+
+
+
+
+app.get('/firebase-messaging-sw.js',async (req, res) => {
 
      
-    res.sendFile(__dirname+'/service-worker.js')  
-}) 
-
-app.get('/fire-app.js',async (req, res) => {
-
-    // res.setHeader('content-type', 'text/javascript');
-    // res.contentType('ll');
-    res.sendFile(__dirname+'/fire-app.js')  
-
-
- 
-}) 
-
-app.get('/fire-msg.js',async (req, res) => {
-
-     
-    res.sendFile(__dirname+'/fire-msg.js')  
-}) 
-
-app.get('/z',async (req, res) => {
-
-     
-    res.sendFile(__dirname+'/z.js')  
+    res.sendFile(__dirname+'/firebase-messaging-sw.js')  
 }) 

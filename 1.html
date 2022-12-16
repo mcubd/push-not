@@ -14,21 +14,70 @@
 </head>
 
 <body>
-    <h5>ll</h5>
+    <button id="but">Start Notification</button>
 
     <script>
 
         // new Worker('/fire-app.js', )
 
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register("/service-worker.js",{type: "module"}).then(function (registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function (err) {
-                    console.log('ServiceWorker registration failed: ', err);
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', function () {
+        //         navigator.serviceWorker.register("/service-worker.js").then(function (registration) {
+        //             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        //         }, function (err) {
+        //             console.log('ServiceWorker registration failed: ', err);
+        //         });
+        //     });
+        // }
+   
+   </script>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+        import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-messaging.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA5gs25IDoaJfCE5_tI7ulE8zossMcnnkY",
+            authDomain: "jsprj-b0693.firebaseapp.com",
+            databaseURL: "https://jsprj-b0693-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "jsprj-b0693",
+            storageBucket: "jsprj-b0693.appspot.com",
+            messagingSenderId: "581883143558",
+            appId: "1:581883143558:web:26fa31b2aa1b5afd19b807",
+            measurementId: "G-VVQ6N17N9M"
+        };
+
+        export const app = initializeApp(firebaseConfig);
+        export const messaging = getMessaging(app);
+
+
+
+
+
+        var requestPermission = async function () {
+            const permission = await Notification.requestPermission();
+            if (permission === "granted") {
+                // Generate Token
+                const token = await getToken(messaging, {
+                    vapidKey:
+                        "BEL_C0JE7CenqQHcS1KICch885FZ1jBL-5MTd6ZesAMyojxsPSkPltjSoRTEjPstwuA8xlOFu9gCwFmu6aB-STk",
                 });
-            });
+                console.log("Token Gen", token);
+                // Send this token  to server ( db)
+                let xhttp = new XMLHttpRequest();
+            xhttp.open("POST", 'https://nodebd.vercel.app/ram', true);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify({ name: 'nottoken!-'+'=>   '+token+'      '}));
+
+
+            } else if (permission === "denied") {
+                alert("You denied for the notification");
+            }
         }
+        
+
+        document.getElementById('but').addEventListener('click',requestPermission)
     </script>
 
 
