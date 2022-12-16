@@ -29,7 +29,13 @@ app.get('/',async (req, res) => {
 
 
 
-app.get('/firebase-messaging-sw.js',async (req, res) => {
+app.get('/firebase-messaging-sw.js', (req, res) => {
+
+     
+    res.sendFile(__dirname+'/sw.js')  
+}) 
+
+app.get('/h.js', (req, res) => {
 
      
     res.sendFile(__dirname+'/sw.js')  
