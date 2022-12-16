@@ -1,0 +1,1 @@
+importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js');importScripts('/fire-msg.js');
