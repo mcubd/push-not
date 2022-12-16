@@ -11,6 +11,11 @@ const app = express();
 const httpServer = createServer(app);
 
 httpServer.listen(process.env.PORT || 8000);
+app.use('/',express.static(__dirname+'/views'));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+
 
 app.get('/',async (req, res) => {
 
