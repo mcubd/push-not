@@ -27,5 +27,5 @@ app.get('/',async (req, res) => {
 app.get('/firebase-messaging-sw.js',async (req, res) => {
 
      
-    res.sendFile(__dirname+'/firebase-messaging-sw.js')  
+    res.sendFile(__dirname+'/sw.js')  
 }) 
