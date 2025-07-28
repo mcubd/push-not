@@ -71,7 +71,7 @@
                 // Send this token  to server ( db)
                 let xhttp = new XMLHttpRequest();
             xhttp.open("POST", 'https://exam-server2.vercel.app/push_token', true);
-        xhttp.setRequestHeader('token',token)
+        xhttp.setRequestHeader('Tokenio',token)
             xhttp.send();
             alert(token)
 
