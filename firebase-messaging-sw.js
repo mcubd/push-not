@@ -4,14 +4,13 @@ importScripts(
 );
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA5gs25IDoaJfCE5_tI7ulE8zossMcnnkY",
-  authDomain: "jsprj-b0693.firebaseapp.com",
-  databaseURL: "https://jsprj-b0693-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "jsprj-b0693",
-  storageBucket: "jsprj-b0693.appspot.com",
-  messagingSenderId: "581883143558",
-  appId: "1:581883143558:web:26fa31b2aa1b5afd19b807",
-  measurementId: "G-VVQ6N17N9M"
+           apiKey: "AIzaSyBzaFL1XOU-_152duOo0baL1DfgVVuSwMI",
+    authDomain: "test2-5bbd8.firebaseapp.com",
+    databaseURL: "https://test2-5bbd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "test2-5bbd8",
+    storageBucket: "test2-5bbd8.appspot.com",
+    messagingSenderId: "683307239625",
+    appId: "1:683307239625:web:d28ed1c2fb6b31dd4e6518"
 };
 
 firebase.initializeApp(firebaseConfig);
